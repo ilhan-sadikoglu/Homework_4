@@ -38,7 +38,7 @@ public:
 	Point getD() const noexcept;
 
 	// Dörtgenin rengini string olarak dönderir
-	Color getColor() const noexcept;
+	auto getColor() const noexcept;
 	string getColorAsString() const noexcept;
 
 	// Dörtgenin çevresini hesaplar ve gönderir
