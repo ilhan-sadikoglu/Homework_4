@@ -59,16 +59,25 @@ auto Triangle::getColor() const noexcept
 
 string Triangle::getColorAsString() const noexcept
 {
-	//PINK, RED, BLUE, WHITE, BLACK, GREEN
-	switch (color)
-	{
-	case Triangle::Color::RED: return "RED";
-	case Triangle::Color::GREEN: return "GREEN";
-	case Triangle::Color::BLUE: return "BLUE";
-	case Triangle::Color::PINK: return "PINK";
-	case Triangle::Color::WHITE: return "WHITE";
-	case Triangle::Color::BLACK: return "BLACK";
-	}
+	////PINK, RED, BLUE, WHITE, BLACK, GREEN
+	//switch (color)
+	//{
+	//case Triangle::Color::RED: return "RED";
+	//case Triangle::Color::GREEN: return "GREEN";
+	//case Triangle::Color::BLUE: return "BLUE";
+	//case Triangle::Color::PINK: return "PINK";
+	//case Triangle::Color::WHITE: return "WHITE";
+	//case Triangle::Color::BLACK: return "BLACK";
+	//}
+	//return "yok";
+
+	const map<Color, string> map = { {Color::RED, "Red"},
+		{Color::BLUE, "Blue"},
+		{Color::WHITE, "White"},
+		{Color::BLACK, "Black"},
+		{Color::GREEN, "Green"}
+	};  auto selectedColor(Triangle::color);
+	return map.at(selectedColor);
 }
 
 double Triangle::getPerimeter() const noexcept
@@ -107,16 +116,10 @@ bool Triangle::isValid() const
 
 double Triangle::printInfo() const noexcept
 {
-	// Ekrana þunu basar:
-	/* Triangle
-	   Number of points: 3
-	   Points: (3.00, 4.40), (2.00, 5.00), (4.80, 5.00)
-	   Primeter: 5.86
-	   Color: Red
-	*/
+	
 	cout << "Triangle" << endl << "Number of points: 3" << endl << "Points: " << "(" << a.x << "," << a.y << ")" << "(" << b.x << "," << b.y << ")" << "(" << c.x << "," << c.y << ")" << endl << "Perimeter: " << getPerimeter() << endl << "Color: "<<getColorAsString()<<endl;
 
-
+	return 0;
 
 }
 
@@ -216,6 +219,7 @@ string Quadrilateral::getColorAsString() const noexcept
 	case Quadrilateral::Color::WHITE: return "WHITE";
 	case Quadrilateral::Color::BLACK: return "BLACK";
 	}
+	return "yok";
 }
 
 double Quadrilateral::getPerimeter() const noexcept
@@ -254,22 +258,16 @@ bool Quadrilateral::setD(const Point& pt)
 
 bool Quadrilateral::isValid() const
 {
-	if (pts[1].coords[0] - pts[0].coords[0] == pts[3].coords[0] - pts[4].coords[0] && pts[0].coords[1] - pts[3].coords[1] == pts[1].coords[1] - pts[2].coords[1])
+	if (pts[1].coords[0] - pts[0].coords[0] == pts[2].coords[0] - pts[3].coords[0] && pts[0].coords[1] - pts[3].coords[1] == pts[1].coords[1] - pts[2].coords[1])
 		return true;
 	else return false;
 }
 
 double Quadrilateral::printInfo() const noexcept
 {
-	// Ekrana þunu basar:
-	/* Triangle
-	   Number of points: 3
-	   Points: (3.00, 4.40), (2.00, 5.00), (4.80, 5.00)
-	   Primeter: 5.86
-	   Color: Red
-	*/
-	cout << "Triangle" << endl << "Number of points: 3" << endl << "Points: " << "(" << a.x << "," << a.y << ")" << "(" << b.x << "," << b.y << ")" << "(" << c.x << "," << c.y << ")" << "(" << d.x << "," << d.y << ")" << endl << "Perimeter: " << getPerimeter() << endl << "Color: " << getColorAsString() << endl;
+	
+	cout << "Quadrilateral" << endl << "Number of points: 4" << endl << "Points: " << "(" << a.x << "," << a.y << ")" << "(" << b.x << "," << b.y << ")" << "(" << c.x << "," << c.y << ")" << "(" << d.x << "," << d.y << ")" << endl << "Perimeter: " << getPerimeter() << endl << "Color: " << getColorAsString() << endl;
 
 
-
+	return 0;
 }

@@ -2,6 +2,8 @@
 #include <vector>
 #include "triangle.h"
 #include "Quadrilateral.h"
+#include <random>
+#include <time.h>
 
 using namespace std;
 
@@ -11,10 +13,32 @@ using namespace std;
 */
 void fillTriangles(vector<Triangle>& v, int numberOfItems = 100)
 {
+	for (int i = 0; i < numberOfItems; i++) {
+		default_random_engine motor(static_cast<unsigned int>(time(0)));
+		uniform_int_distribution<unsigned int> randomInt(1, 100);
+		int a = randomInt(motor);
+		int b = randomInt(motor);
+		int c = randomInt(motor);
+		int d = randomInt(motor);
+		int e = randomInt(motor);
+		int f = randomInt(motor);
 
+		default_random_engine mt(static_cast<unsigned int>(time(0)));
+		uniform_int_distribution<unsigned int> randomcolor(1, 5);
+		int renk = randomcolor(mt);
+		Triangle::Color  color;
+		switch (renk)
+		{
+		case 1: color = Triangle::Color::RED;
+		case 2: color = Triangle::Color::GREEN;
+		case 3: color = Triangle::Color::BLUE;
+		case 4: color = Triangle::Color::WHITE;
+		case 5: color = Triangle::Color::BLACK;
+		case 6: color = Triangle::Color::PINK;
+		}
 
-
-
+		v.push_back(Triangle{ Point(a, b),  Point(c, d),  Point(e, f),color });
+	}
 }
 
 // Rastgele olarak Quadrilateral nesneleri olusturur ve parametre olarak verilen vektore ekler.
@@ -23,6 +47,33 @@ void fillTriangles(vector<Triangle>& v, int numberOfItems = 100)
 */
 void fillQuads(vector<Quadrilateral>& v, int numberOfItems = 100)
 {
+	for (int i = 0; i < numberOfItems; i++) {
+		default_random_engine motor(static_cast<unsigned int>(time(0)));
+		uniform_int_distribution<unsigned int> randomInt(1, 100);
+		int a = randomInt(motor);
+		int b = randomInt(motor);
+		int c = randomInt(motor);
+		int d = randomInt(motor);
+		int e = randomInt(motor);
+		int f = randomInt(motor);
+		int g = randomInt(motor);
+		int h = randomInt(motor);
+
+		default_random_engine mt(static_cast<unsigned int>(time(0)));
+		uniform_int_distribution<unsigned int> randomcolor(1, 5);
+		int renk = randomcolor(mt);
+		Quadrilateral::Color  color;
+		switch (renk)
+		{
+		case 1: color = Quadrilateral::Color::RED;
+		case 2: color = Quadrilateral::Color::GREEN;
+		case 3: color = Quadrilateral::Color::BLUE;
+		case 4: color = Quadrilateral::Color::WHITE;
+		case 5: color = Quadrilateral::Color::BLACK;
+		}
+
+		v.push_back(Quadrilateral{ Point(a, b),  Point(c, d),  Point(e, f), Point(g, h),color});
+	}
 
 }
 
@@ -30,8 +81,13 @@ void fillQuads(vector<Quadrilateral>& v, int numberOfItems = 100)
 /* Verilen Triangle veya Rectangle vektörününde çevre uzunluðu ve renk deðeri eþleþen ilk elemanýn indeksini döndürür.
 Eleman bulunamazsa -1 döndürülür.*/
 template<class T>
-int search(const vector<T>& v, const T& key)
-{
+int search(const vector<T>& v, const T& key){
+
+
+
+
+
+
 	return 0;
 }
 
@@ -39,6 +95,11 @@ int search(const vector<T>& v, const T& key)
 template<class T>
 int sortByPerimeter(vector<T>& v)
 {
+
+
+
+
+
 	return 0;
 }
 

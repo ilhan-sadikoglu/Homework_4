@@ -4,6 +4,7 @@
 #include <map>
 #include "point.h"
 
+
 using namespace std;
 
 class Quadrilateral

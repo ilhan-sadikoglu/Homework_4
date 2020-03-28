@@ -51,9 +51,9 @@ public:
 	   Color: Red
 	*/
 
-	int k = sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
-	int l = sqrt((b.x - c.x) * (b.x - c.x) + (b.y - c.y) * (b.y - c.y));
-	int m = sqrt((a.x - c.x) * (a.x - c.x) + (a.y - c.y) * (a.y - c.y));
+	double k = sqrt((a.coords[0] - b.coords[0]) * (a.coords[0] - b.coords[0]) + (a.coords[1] - b.coords[1]) * (a.coords[1] - b.coords[1]));
+	double l = sqrt((b.coords[0] - c.coords[0]) * (b.coords[0] - c.coords[0]) + (b.coords[1] - c.coords[1]) * (b.coords[1] - c.coords[1]));
+	double m = sqrt((a.coords[0] - c.coords[0]) * (a.coords[0] - c.coords[0]) + (a.coords[1] - c.coords[1]) * (a.coords[1] - c.coords[1]));
 
 private:
 	array<Point, NUMBER_OF_CORNERS> pts;
